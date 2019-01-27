@@ -1,0 +1,16 @@
+input, button, form {
+  font-size: 18px;
+  box-sizing: content-box;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+#add {
+  font-size: 18px;
+  border-width: 1px;
+  margin: 15px;
+  position: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 1px 2px 2px black;
+}

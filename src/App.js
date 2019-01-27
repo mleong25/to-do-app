@@ -1,27 +1,61 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Header from './components/Header'
+import ToDoListUI from './components/ToDoListUI'
+import TaskItems from './components/TaskItems'
+import './styles/App.css';
 
 class App extends Component {
+  inputElement = React.createRef()
+  constructor() {
+    super()
+    this.state = {
+      tasks: [],
+      currentTask: {text:'', key: ''},
+    }
+  }
+  
+  removeTask = key => {
+    const filteredTasks = this.state.tasks.filter(task => {
+      return task.key !== key
+    })
+    this.setState ({
+      tasks: filteredTasks,
+    })
+  }
+  
+  handleInput = e => {
+    const taskText = e.target.value
+    const currentTask = { text: taskText, key: Date.now() }
+    this.setState({
+      currentTask,
+    })
+  }
+  
+  addTask = e => {
+    e.preventDefault()
+    const newTask = this.state.currentTask
+    if(newTask.text !== '') {
+      const tasks = [...this.state.tasks, newTask]
+      this.setState({
+        tasks: tasks,
+        currentTask: { text: '', key: ''},
+      })
+    }
+  }
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <ToDoListUI 
+          addTask={this.addTask}
+          inputElement={this.inputElement}
+          handleInput={this.handleInput}
+          currentTask={this.state.currentTask}
+        />
+        <TaskItems entries={this.state.tasks} removeTask={this.removeTask} />
       </div>
-    );
+    )
   }
 }
 

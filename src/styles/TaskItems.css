@@ -1,0 +1,34 @@
+li {
+  list-style: none;
+  font-size: 22px;
+  justify-content: space-around;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#options {
+  font-size: 12px;
+  position: static;
+  display: inline-flex;
+  border-right: none;
+  border-left: none;
+  border-color: whitesmoke;
+  background-color: #cccccc;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+#options:before {
+  color: black;
+  margin: 15px;
+}
+
+#options:hover {
+  font-size: 14px;
+  color: red;
+}
