@@ -21,6 +21,7 @@ li {
   font-weight: bold;
   text-align: left;
   padding-left: 0;
+  color: whitesmoke;
 }
 
 button:hover {
@@ -33,18 +34,20 @@ button:hover {
   display: inline-flex;
   border-right: none;
   border-left: none;
-  border-color: whitesmoke;
-  background-color: #cccccc;
+  border-color: #FECEAB;
+  background-color: #2A363B;
   margin: 10px;
   vertical-align: middle;
+  color: #FECEAB;
 }
 
 #options:before {
-  color: black;
+  color: whitesmoke;
   margin: 15px;
 }
 
 #options:hover {
   font-size: 14px;
-  color: red;
+  color: #E84A5F;
+  border-color: #E84A5F;
 }

@@ -45,14 +45,16 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
-        <Header />
-        <ToDoListUI 
-          addTask={this.addTask}
-          inputElement={this.inputElement}
-          handleInput={this.handleInput}
-          currentTask={this.state.currentTask}
-        />
+      <div>
+        <div className="App">
+          <Header />
+          <ToDoListUI 
+            addTask={this.addTask}
+            inputElement={this.inputElement}
+            handleInput={this.handleInput}
+            currentTask={this.state.currentTask}
+          />
+        </div>
         <TaskItems entries={this.state.tasks} removeTask={this.removeTask} />
       </div>
     )

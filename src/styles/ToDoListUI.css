@@ -5,11 +5,28 @@ input, button, form {
   justify-content: center;
 }
 
+input {
+  background-color: #72ffd9;
+  border-color: black;
+  color: black;
+  font-size: 25px;
+  vertical-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input:focus {
+  outline: 0;
+}
+
 .button {
   border: none;
   display: inline-block;
   font-size: 18px;
-  margin: 15px;
+  width: 80px;
+  margin: 20px 15px 10px 15px;
+  border-radius: 20px;
   text-align: center;
   background-color: #ff7449;
   color: #FFFFFF;
@@ -17,6 +34,7 @@ input, button, form {
   transition: all 0.5s;
   cursor: pointer;
   padding: 5px;
+  vertical-align: baseline;
 }
 
 .button span {
