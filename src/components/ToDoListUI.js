@@ -18,7 +18,7 @@ class ToDoListUI extends Component {
               placeholder="Task" 
               onChange={this.props.handleInput} 
             />
-            <button id="add" type="submit"> Add </button>
+            <button className="button" id="add" type="submit"><span> Add </span></button>
           </form>
         </div>
       </div>

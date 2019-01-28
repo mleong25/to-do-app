@@ -8,11 +8,9 @@ class TaskItems extends Component {
   
   createTask = task => {
     return (
-      <div>
+      <div className="optionsParent">
         <li key={task.key}>
-          {task.text}<button id="options" onClick={() => this.props.removeTask(task.key)}>
-            Remove
-            </button>
+          {task.text}
           {// <div className="menu">
           //   {task.text}<button className="menuBtn" onclick="showMenu()"/>
           //   <div id="dropdown" ref={dropdown => this.dropdown = dropdown}>
@@ -28,6 +26,9 @@ class TaskItems extends Component {
           // </div>
         }
         </li>
+        <button id="options" onClick={() => this.props.removeTask(task.key)}>
+          Remove
+        </button>
       </div>
     )
   }
@@ -37,7 +38,9 @@ class TaskItems extends Component {
     const list = toDoEntries.map(this.createTask)
     
     return (
-      <ul className="ToDoList">{list}</ul>
+      <div className="table">
+        <ul className="ToDoList">{list}</ul>
+      </div>
     )
   }
 }
